@@ -1,0 +1,151 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  max-width: 100vw;
+  z-index: 100;
+  background: transparent;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  font-family: 'Bebas Neue', 'Anton', Arial, sans-serif;
+  box-shadow: none;
+  box-sizing: border-box;
+  pointer-events: auto;
+  transition: background 0.4s, backdrop-filter 0.4s, border 0.4s;
+  overflow: visible;
+}
+
+.glassBg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  background: rgba(20, 20, 30, 0.45);
+  backdrop-filter: blur(20px) saturate(1.5);
+  -webkit-backdrop-filter: blur(20px) saturate(1.5);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+  will-change: backdrop-filter;
+  transform: translateZ(0);
+}
+
+.glassBg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat;
+  opacity: 0.04; /* tweak for visibility */
+  pointer-events: none;
+  z-index: 2;
+}
+
+
+.contentWrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex: 1;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar.glass {
+  background: none;
+  backdrop-filter: none;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  position: fixed;
+}
+
+.left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.center {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-width: 0;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  transition: opacity 0.4s;
+}
+
+.logo.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: color 0.2s;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.navLinks a:hover {
+  color: #FF0033;
+}
+
+.icons {
+  display: flex;
+  gap: 1.2rem;
+  font-size: 1.5rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem 0.5rem;
+  }
+  .left, .center, .right {
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+  .center {
+    order: 2;
+  }
+  .left {
+    order: 1;
+  }
+  .right {
+    order: 3;
+  }
+} 

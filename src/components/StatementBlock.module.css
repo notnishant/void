@@ -1,0 +1,20 @@
+.statementSection {
+  background: #111;
+  padding: 2.5rem 1rem 2rem 1rem;
+  text-align: center;
+}
+
+.statement {
+  font-family: 'Anton', 'Bebas Neue', Arial, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #FF0033;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .statement {
+    font-size: 1.2rem;
+  }
+} 

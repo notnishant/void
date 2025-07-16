@@ -1,0 +1,43 @@
+.bannerSection {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 8rem 1rem 6rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.topSmall {
+  font-family: 'Roboto Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
+  font-size: 1.1rem;
+  letter-spacing: 0.18em;
+  margin-bottom: 4rem;
+  opacity: 0.8;
+}
+
+.bigText {
+  font-family: 'Anton', 'Bebas Neue', Arial, sans-serif;
+  font-size: 6vw;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  margin-bottom: 4rem;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.bottomSmall {
+  font-family: 'Roboto Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
+  font-size: 1.1rem;
+  letter-spacing: 0.18em;
+  opacity: 0.8;
+}
+
+@media (max-width: 700px) {
+  .bigText {
+    font-size: 2.2rem;
+  }
+  .topSmall, .bottomSmall {
+    font-size: 0.9rem;
+  }
+} 

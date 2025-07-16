@@ -1,24 +1,34 @@
+import React, { useState, useCallback } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Categories from './components/Categories';
+import HighlightBlock from './components/HighlightBlock';
+import StatementBlock from './components/StatementBlock';
+import FeaturedBlock from './components/FeaturedBlock';
+import Footer from './components/Footer';
+import FullScreenImageSection from './components/FullScreenImageSection';
+import BannerMessageSection from './components/BannerMessageSection';
 
 function App() {
+  const [scrolled, setScrolled] = useState(false);
+  const handleScrollCheck = useCallback((isScrolled) => {
+    setScrolled(isScrolled);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar glass={scrolled} />
+      <FullScreenImageSection scrolled={scrolled} onScrollCheck={handleScrollCheck} />
+      <BannerMessageSection />
+      <Hero />
+      <Categories />
+      <HighlightBlock />
+      <StatementBlock />
+      <FeaturedBlock />
+      <Footer />
+    </>
   );
 }
 
