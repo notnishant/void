@@ -11,7 +11,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 2rem;
+  padding: 1rem 2rem;
   font-family: 'Bebas Neue', 'Anton', Arial, sans-serif;
   box-shadow: none;
   box-sizing: border-box;
@@ -48,10 +48,11 @@
   position: absolute;
   inset: 0;
   background-repeat: repeat;
-  opacity: 0.02; /* Almost invisible noise */
+  opacity: 0.02;
+  mix-blend-mode: soft-light;
   pointer-events: none;
   z-index: 2;
-  mix-blend-mode: soft-light; /* Changed blend mode for subtler effect */
+  background-color: rgba(255, 255, 255, 0.02);
 }
 
 

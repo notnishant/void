@@ -1,58 +1,152 @@
 .highlightSection {
   background: #FF0033;
   color: #fff;
-  padding: 3rem 1.5rem 2.5rem 1.5rem;
+  padding: 4rem 2rem;
+  min-height: 300px;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
 .content {
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: left;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.textContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .headline {
   font-family: 'Anton', 'Bebas Neue', Arial, sans-serif;
-  font-size: 2rem;
-  font-weight: 900;
-  letter-spacing: 1.5px;
-  margin-bottom: 1.2rem;
+  font-size: 4.5rem;
+  line-height: 0.9;
+  font-weight: 400;
+  margin: 0 0 1rem 0;
   color: #fff;
+  letter-spacing: -0.02em;
 }
 
 .text {
   font-family: 'Bebas Neue', Arial, sans-serif;
   font-size: 1.2rem;
-  margin-bottom: 1.5rem;
   color: #fff;
+  margin: 0;
+  letter-spacing: 0.5px;
 }
 
-.cta {
-  background: #fff;
-  color: #FF0033;
-  border: none;
-  padding: 0.7rem 2rem;
-  font-size: 1.1rem;
+.signupContainer {
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1rem;
+}
+
+
+
+.signupForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 280px;
+}
+
+.emailLabel {
   font-family: 'Bebas Neue', Arial, sans-serif;
-  font-weight: 700;
-  border-radius: 6px;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-  transition: background 0.2s, color 0.2s;
-}
-
-.cta:hover {
-  background: #111;
+  font-size: 0.9rem;
   color: #fff;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.5px;
 }
 
-@media (max-width: 700px) {
-  .headline {
-    font-size: 1.3rem;
-  }
+.emailInput {
+  padding: 0.75rem 1rem;
+  border: 2px solid #fff;
+  border-radius: 0;
+  font-size: 1rem;
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: #000;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.emailInput:focus {
+  border-color: #fff;
+}
+
+.signupButton {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1rem;
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.signupButton:hover {
+  background: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
   .content {
+    flex-direction: column;
     text-align: center;
+    gap: 2rem;
   }
-} 
+  
+  .headline {
+    font-size: 3.5rem;
+  }
+  
+  .signupContainer {
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .highlightSection {
+    padding: 3rem 1.5rem;
+  }
+  
+  .headline {
+    font-size: 2.8rem;
+  }
+  
+  .text {
+    font-size: 1.1rem;
+  }
+  
+  .signupForm {
+    min-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .highlightSection {
+    padding: 2.5rem 1rem;
+  }
+  
+  .headline {
+    font-size: 2.2rem;
+  }
+  
+  .signupForm {
+    min-width: 100%;
+  }
+}

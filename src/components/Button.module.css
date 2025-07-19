@@ -1,0 +1,51 @@
+.button {
+  border: none;
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+/* Variants */
+.primary {
+  background: #FF0033;
+  color: #fff;
+}
+
+.primary:hover {
+  background: #e60030;
+}
+
+.secondary {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.secondary:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* Sizes */
+.small {
+  padding: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+}
+
+.medium {
+  padding: 0.75rem 2.5rem;
+  font-size: 1.1rem;
+}
+
+.large {
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+}

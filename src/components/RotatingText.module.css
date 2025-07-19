@@ -1,0 +1,70 @@
+.scrollingBannerSection {
+  background: #111;
+  color: #FF0033;
+  padding: 6rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+  min-height: 20rem;
+  display: flex;
+  align-items: center;
+}
+
+.scrollingContainer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.scrollingText {
+  font-family: 'Anton', 'Bebas Neue', Arial, sans-serif;
+  font-size: 35rem;
+  font-weight: 300;
+  color: #FF0033;
+  text-shadow: 0 4px 16px rgba(255, 0, 51, 0.3);
+  white-space: nowrap;
+  display: inline-block;
+  animation: scrollBanner 40s linear infinite;
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+
+@keyframes scrollBanner {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .scrollingText {
+    font-size: 13rem;
+  }
+
+  .scrollingBannerSection {
+    padding: 3rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .scrollingText {
+    font-size: 10.4rem;
+    letter-spacing: 0.05em;
+  }
+
+  .scrollingBannerSection {
+    padding: 2.5rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .scrollingText {
+    font-size: 7.8rem;
+  }
+
+  .scrollingBannerSection {
+    padding: 2rem 0;
+  }
+}

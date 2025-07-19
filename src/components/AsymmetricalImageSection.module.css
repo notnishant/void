@@ -1,0 +1,140 @@
+.asymmetricalSection {
+  background: #111;
+  color: #fff;
+  padding: 8rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4rem;
+}
+
+.imageGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  width: 100%;
+  margin-top: 2rem;
+  align-items: start;
+}
+
+.largeImage {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  position: sticky;
+  top: 0;
+  margin: -8rem 0 -8rem -4rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.smallImage {
+  width: 100%;
+  aspect-ratio: 9/16;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+}
+
+.textOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+}
+
+.textContent {
+  max-width: 600px;
+  text-align: center;
+}
+
+.collectionTitle {
+  font-family: 'Anton', 'Bebas Neue', Arial, sans-serif;
+  font-size: 4rem;
+  line-height: 1.1;
+  font-weight: 400;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.02em;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.collectionSubtitle {
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  font-size: 1.2rem;
+  color: #ccc;
+  margin: 0 0 2rem 0;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.shopButton {
+  margin-top: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .asymmetricalSection {
+    padding: 6rem 2rem;
+  }
+  
+  .largeImage {
+    margin: -6rem 0 -6rem -2rem;
+  }
+  
+  .textOverlay {
+    padding: 3rem;
+  }
+  
+  .collectionTitle {
+    font-size: 3rem;
+  }
+  
+  .collectionSubtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .asymmetricalSection {
+    padding: 4rem 1.5rem;
+  }
+  
+  .imageGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .smallImage {
+    aspect-ratio: 9/16;
+  }
+  
+  .largeImage {
+    height: 100vh;
+    position: static;
+    margin: 0;
+  }
+  
+  .textOverlay {
+    padding: 2rem;
+  }
+  
+  .textContent {
+    max-width: 100%;
+  }
+  
+  .collectionTitle {
+    font-size: 2.5rem;
+  }
+  
+  .collectionSubtitle {
+    font-size: 1rem;
+    margin: 0 0 1.5rem 0;
+  }
+}

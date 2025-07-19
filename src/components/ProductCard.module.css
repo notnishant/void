@@ -1,0 +1,60 @@
+.productCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  transition: color 0.3s ease;
+}
+
+.productCard:hover .productName,
+.productCard:hover .productVariant,
+.productCard:hover .productColors {
+  color: #FF0033;
+  transition: color 0.3s ease;
+}
+
+.imageContainer {
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #1a1a1a;
+  max-height: 270px;
+}
+
+.productImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.productCard:hover .productImage {
+  transform: scale(1.05);
+}
+
+.productInfo {
+  padding: 0.15rem 0;
+}
+
+.productName {
+  font-family: 'Anton', 'Bebas Neue', Arial, sans-serif;
+  font-size: 1.15rem;
+  margin: 0 0 0.15rem 0;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.productVariant {
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  font-size: 0.85rem;
+  color: #888;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.productColors {
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  font-size: 0.75rem;
+  color: #666;
+  margin: 0.1rem 0 0 0;
+  transition: color 0.3s ease;
+}

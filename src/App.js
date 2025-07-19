@@ -1,32 +1,40 @@
-import React, { useState, useCallback } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Categories from './components/Categories';
-import HighlightBlock from './components/HighlightBlock';
-import StatementBlock from './components/StatementBlock';
-import FeaturedBlock from './components/FeaturedBlock';
-import Footer from './components/Footer';
-import FullScreenImageSection from './components/FullScreenImageSection';
-import BannerMessageSection from './components/BannerMessageSection';
+import {
+  Navbar,
+  Footer,
+  FullScreenImageSection,
+  BannerMessageSection,
+  UserGallerySection,
+  Hero,
+  AsymmetricalImageSection,
+  RotatingText,
+  HighlightBlock,
+  StatementBlock,
+  FeaturedBlock
+} from './components';
+import { useScrollDetection } from './hooks';
 
 function App() {
-  const [scrolled, setScrolled] = useState(false);
-  const handleScrollCheck = useCallback((isScrolled) => {
-    setScrolled(isScrolled);
-  }, []);
+  const scrolled = useScrollDetection(100);
 
   return (
     <>
+      {/* Navigation */}
       <Navbar glass={scrolled} />
-      <FullScreenImageSection scrolled={scrolled} onScrollCheck={handleScrollCheck} />
+
+      {/* Hero Sections */}
+      <FullScreenImageSection scrolled={scrolled} />
       <BannerMessageSection />
       <Hero />
-      <Categories />
+
+      {/* Content Sections */}
+      <AsymmetricalImageSection />
+      <RotatingText />
+      <UserGallerySection />
       <HighlightBlock />
-      <StatementBlock />
-      <FeaturedBlock />
+
+      {/* Footer */}
       <Footer />
     </>
   );

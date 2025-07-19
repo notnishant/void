@@ -1,65 +1,98 @@
 .imageGridSection {
   background: #111;
   color: #fff;
-  padding: 8rem 4rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4rem;
+  padding: 4rem 0;
+  overflow: hidden;
 }
 
-.imageGrid {
+.gridContainer {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 2rem;
-  width: 100%;
-  align-items: start;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-.largeImage {
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
+.gridItem {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
   border-radius: 8px;
-  position: sticky;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gridItem:hover {
+  transform: scale(1.02);
+}
+
+.gridImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gridItem:hover .gridImage {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
   top: 0;
-  margin: -8rem 0 -8rem -4rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.smallImage {
-  width: 100%;
-  aspect-ratio: 9/16;
-  background-size: cover;
-  background-position: center;
-  border-radius: 8px;
+.gridItem:hover .overlay {
+  opacity: 1;
 }
 
-@media (max-width: 1024px) {
-  .imageGridSection {
-    padding: 6rem 2rem;
-  }
+.overlayContent {
+  text-align: center;
+}
 
-  .largeImage {
-    margin: -6rem 0 -6rem -2rem;
+.overlayText {
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .gridContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
   }
 }
 
 @media (max-width: 768px) {
   .imageGridSection {
-    padding: 4rem 1.5rem;
+    padding: 3rem 0;
   }
-
-  .imageGrid {
+  
+  .gridContainer {
     grid-template-columns: 1fr;
+    gap: 0.6rem;
+    padding: 0 0.5rem;
   }
-
-  .largeImage {
-    height: 100vh;
-    position: static;
-    margin: 0;
+  
+  .gridItem {
+    aspect-ratio: 16/9;
   }
-
-  .smallImage {
-    aspect-ratio: 9/16;
+  
+  .overlayText {
+    font-size: 1.2rem;
   }
-} 
+}

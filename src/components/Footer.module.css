@@ -1,121 +1,228 @@
 .footer {
   background: #111;
   color: #fff;
+  padding: 4rem 0 0 0;
+}
+
+.footerContent {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem 3rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 2.5rem 2rem 2rem 2rem;
-  flex-wrap: wrap;
-  gap: 2rem;
+  gap: 4rem;
 }
 
-.footerLeft {
+.footerColumns {
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  gap: 4rem;
+  flex: 1;
 }
 
-.logo {
-  font-family: 'Anton', 'Bebas Neue', Arial, sans-serif;
-  font-size: 2rem;
-  font-weight: bold;
-  letter-spacing: 2px;
-  margin-bottom: 1rem;
+.column {
+  flex: 1;
 }
 
-.links {
+.columnTitle {
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 1.5rem 0;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.columnLinks {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
 }
 
-.links a {
-  color: #fff;
+.columnLinks li {
+  margin-bottom: 0.75rem;
+}
+
+.columnLinks a {
+  color: #ccc;
   text-decoration: none;
-  font-size: 1rem;
-  font-family: 'Bebas Neue', Arial, sans-serif;
-  transition: color 0.2s;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
 }
 
-.links a:hover {
+.columnLinks a:hover {
   color: #FF0033;
 }
 
-.footerRight {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 1.2rem;
+.contactInfo {
+  margin-bottom: 1.5rem;
 }
 
-.newsletter {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.5rem;
-}
-
-.newsletterLabel {
-  font-family: 'Bebas Neue', Arial, sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 0.2rem;
-}
-
-.newsletterInputGroup {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.input {
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  border: none;
-  font-size: 1rem;
-  font-family: 'Bebas Neue', Arial, sans-serif;
-}
-
-.submit {
-  background: #FF0033;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1.2rem;
-  font-size: 1rem;
-  font-family: 'Bebas Neue', Arial, sans-serif;
-  font-weight: 700;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.submit:hover {
-  background: #c40027;
-}
-
-.copyright {
+.contactInfo p {
+  margin: 0 0 0.5rem 0;
+  font-family: Arial, sans-serif;
   font-size: 0.9rem;
-  color: #aaa;
-  margin-top: 1rem;
-  text-align: right;
+  color: #ccc;
+  line-height: 1.4;
 }
 
-@media (max-width: 700px) {
-  .footer {
+.contactInfo strong {
+  color: #fff;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialIcons a {
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.socialIcons a:hover {
+  transform: scale(1.1);
+}
+
+.logoContainer {
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.footerBottom {
+  border-top: 1px solid #333;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.bottomLeft p {
+  margin: 0 0 0.5rem 0;
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.bottomLinks {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.bottomLinks a {
+  color: #888;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+  transition: color 0.2s ease;
+}
+
+.bottomLinks a:hover {
+  color: #FF0033;
+}
+
+.bottomRight {
+  display: flex;
+  align-items: center;
+}
+
+.certifications {
+  display: flex;
+  gap: 1rem;
+}
+
+.cert {
+  font-size: 0.8rem;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .footerContent {
     flex-direction: column;
-    align-items: center;
-    gap: 2.5rem;
-    padding: 2rem 1rem 1.5rem 1rem;
+    gap: 3rem;
   }
-  .footerRight {
-    align-items: center;
+  
+  .footerColumns {
+    gap: 3rem;
   }
-  .newsletter {
-    align-items: center;
+  
+  .logoContainer {
+    order: -1;
+    justify-content: flex-start;
   }
-  .copyright {
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 3rem 0 0 0;
+  }
+  
+  .footerContent {
+    padding: 0 1.5rem 2rem 1.5rem;
+  }
+  
+  .footerColumns {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .footerBottom {
+    flex-direction: column;
+    gap: 1rem;
     text-align: center;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
-} 
+  
+  .bottomLinks {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .certifications {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footerContent {
+    padding: 0 1rem 1.5rem 1rem;
+  }
+  
+  .footerColumns {
+    gap: 1.5rem;
+  }
+  
+  .footerBottom {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .bottomLinks {
+    gap: 1rem;
+  }
+  
+  .certifications {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
