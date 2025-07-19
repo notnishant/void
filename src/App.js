@@ -10,8 +10,7 @@ import {
   AsymmetricalImageSection,
   RotatingText,
   HighlightBlock,
-  StatementBlock,
-  FeaturedBlock
+  MobileOverlay,
 } from './components';
 import { useScrollDetection } from './hooks';
 
@@ -20,6 +19,7 @@ function App() {
 
   return (
     <>
+      <MobileOverlay />
       {/* Navigation */}
       <Navbar glass={scrolled} />
 

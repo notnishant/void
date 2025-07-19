@@ -20,3 +20,4 @@ export { default as ProductCard } from './ProductCard';
 export { default as Button } from './Button';
 export { default as AudioControl } from './AudioControl';
 export { default as AccountCartSection } from './AccountCartSection';
+export { default as MobileOverlay } from './MobileOverlay';
