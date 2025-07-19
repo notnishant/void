@@ -1,0 +1,65 @@
+.imageGridSection {
+  background: #111;
+  color: #fff;
+  padding: 8rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4rem;
+}
+
+.imageGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  width: 100%;
+  align-items: start;
+}
+
+.largeImage {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  position: sticky;
+  top: 0;
+  margin: -8rem 0 -8rem -4rem;
+}
+
+.smallImage {
+  width: 100%;
+  aspect-ratio: 9/16;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+}
+
+@media (max-width: 1024px) {
+  .imageGridSection {
+    padding: 6rem 2rem;
+  }
+
+  .largeImage {
+    margin: -6rem 0 -6rem -2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .imageGridSection {
+    padding: 4rem 1.5rem;
+  }
+
+  .imageGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .largeImage {
+    height: 100vh;
+    position: static;
+    margin: 0;
+  }
+
+  .smallImage {
+    aspect-ratio: 9/16;
+  }
+} 

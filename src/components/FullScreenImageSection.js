@@ -14,6 +14,7 @@ function lerp(a, b, t) {
 const FullScreenImageSection = ({ scrolled, onScrollCheck }) => {
   const [progress, setProgress] = useState(0);
   const logoRef = useRef();
+  const videoRef = useRef();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,13 +42,17 @@ const FullScreenImageSection = ({ scrolled, onScrollCheck }) => {
   const opacity = lerp(LOGO_START.opacity, LOGO_END.opacity, progress);
 
   return (
-    <section
-      className={styles.fullScreenSection}
-      style={{
-        background: "url('/voidbackground.jpg') center center/contain no-repeat",
-        backgroundColor: '#111'
-      }}
-    >
+    <section className={styles.fullScreenSection}>
+      <video
+        ref={videoRef}
+        className={styles.backgroundVideo}
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source src="/void_background_video.mp4" type="video/mp4" />
+      </video>
       <img
         ref={logoRef}
         src="/void-logo.png"

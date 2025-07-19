@@ -7,6 +7,20 @@
   align-items: stretch;
   justify-content: center;
   overflow: hidden;
+  background-color: #111; /* Fallback color */
+}
+
+.backgroundVideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.35); /* Scale up to crop black bars */
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  z-index: 1;
 }
 
 .overlay {

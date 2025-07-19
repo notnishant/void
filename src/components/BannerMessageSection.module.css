@@ -1,43 +1,102 @@
 .bannerSection {
-  background: #000;
+  background: #111;
   color: #fff;
-  text-align: center;
-  padding: 8rem 1rem 6rem 1rem;
+  padding: 8rem 4rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  gap: 4rem;
 }
 
-.topSmall {
-  font-family: 'Roboto Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
-  font-size: 1.1rem;
-  letter-spacing: 0.18em;
-  margin-bottom: 4rem;
-  opacity: 0.8;
+.textContent {
+  max-width: 1400px;
+  padding-right: 2rem;
+  padding-bottom: 8rem;
 }
 
-.bigText {
+.mainText {
   font-family: 'Anton', 'Bebas Neue', Arial, sans-serif;
-  font-size: 6vw;
+  font-size: 4.5rem;
+  line-height: 1.1;
   font-weight: 400;
-  letter-spacing: 0.12em;
-  margin-bottom: 4rem;
-  line-height: 1.05;
-  text-transform: uppercase;
+  text-align: left;
+  letter-spacing: -0.02em;
 }
 
-.bottomSmall {
-  font-family: 'Roboto Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
-  font-size: 1.1rem;
-  letter-spacing: 0.18em;
-  opacity: 0.8;
+.cursiveText {
+  font-family: 'Brush Script MT', cursive;
+  font-style: italic;
 }
 
-@media (max-width: 700px) {
-  .bigText {
-    font-size: 2.2rem;
+.imageGrid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  width: 100%;
+  margin-top: 2rem;
+  align-items: start;
+}
+
+.smallImage {
+  width: 100%;
+  aspect-ratio: 9/16;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+}
+
+.largeImage {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  position: sticky;
+  top: 0;
+  margin: -8rem -4rem -8rem 0;
+}
+
+@media (max-width: 1024px) {
+  .bannerSection {
+    padding: 6rem 2rem;
   }
-  .topSmall, .bottomSmall {
-    font-size: 0.9rem;
+  
+  .textContent {
+    padding-bottom: 6rem;
+  }
+  
+  .mainText {
+    font-size: 3.5rem;
+  }
+  
+  .largeImage {
+    margin: -6rem -2rem -6rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .bannerSection {
+    padding: 4rem 1.5rem;
+  }
+  
+  .textContent {
+    padding-bottom: 4rem;
+  }
+  
+  .mainText {
+    font-size: 2.5rem;
+  }
+  
+  .imageGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .smallImage {
+    aspect-ratio: 9/16;
+  }
+  
+  .largeImage {
+    height: 100vh;
+    position: static;
+    margin: 0;
   }
 } 

@@ -1,29 +1,42 @@
 import React from 'react';
 import styles from './Hero.module.css';
+import SecondImageGridSection from './SecondImageGridSection';
 
 const Hero = () => {
+  const products = [
+    { name: 'The Street Classic', variant: 'Crystal Black Bio', colors: '(+5 Colors)', image: '/voidbackground.jpg' },
+    { name: 'The Urban Edge', variant: 'Polarized Smoke Bio', colors: '(+2 Colors)', image: '/voidbackground1.jpg' },
+    { name: 'The Night Rider', variant: 'Crystal Cherry Bio', colors: '(+3 Colors)', image: '/voidbackground.jpg' },
+    { name: 'The City Pulse', variant: 'Licorice Bio', colors: '(+4 Colors)', image: '/voidbackground1.jpg' },
+    { name: 'The Metro Flow', variant: 'Crystal Stone Bio', colors: '(+2 Colors)', image: '/voidbackground.jpg' },
+    { name: 'The Urban Wave', variant: 'Black Moondust Bio', colors: '(+3 Colors)', image: '/voidbackground1.jpg' },
+    { name: 'The Street Beat', variant: 'Polarized Lunar Bio', colors: '(+3 Colors)', image: '/voidbackground.jpg' },
+    { name: 'The City Groove', variant: 'Crystal Cherry Bio', colors: '(+2 Colors)', image: '/voidbackground1.jpg' },
+  ];
+
   return (
-    <section className={styles.hero}>
-      <div className={styles.heroContent}>
-        <h1 className={styles.headline}>HIT THE ROAD IN STYLE</h1>
-        <p className={styles.subheadline}>Elevate Your Streetwear Game by entering the Void!</p>
-        <button className={styles.cta}>Shop Now</button>
-      </div>
-      <div className={styles.heroImages}>
-        <div className={styles.heroImgLeft}>
-          {/* Placeholder for left product image */}
-          <div className={styles.imgPlaceholder}></div>
+    <>
+      <section className={styles.hero}>
+        <div className={styles.productGrid}>
+          {products.map((product, index) => (
+            <div key={index} className={styles.productCard}>
+              <div className={styles.imageContainer}>
+                <img src={product.image} alt={product.name} className={styles.productImage} />
+              </div>
+              <div className={styles.productInfo}>
+                <h3 className={styles.productName}>{product.name}</h3>
+                <p className={styles.productVariant}>{product.variant}</p>
+                <p className={styles.productColors}>{product.colors}</p>
+              </div>
+            </div>
+          ))}
         </div>
-        <div className={styles.heroImgCenter}>
-          {/* Placeholder for center product image */}
-          <div className={styles.imgPlaceholder}></div>
+        <div className={styles.ctaContainer}>
+          <button className={styles.cta}>Shop Best Sellers</button>
         </div>
-        <div className={styles.heroImgRight}>
-          {/* Placeholder for right product image */}
-          <div className={styles.imgPlaceholder}></div>
-        </div>
-      </div>
-    </section>
+      </section>
+      <SecondImageGridSection />
+    </>
   );
 };
 

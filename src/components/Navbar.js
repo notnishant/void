@@ -14,10 +14,11 @@ const Navbar = ({ glass }) => {
               inset: 0,
               backgroundImage: "url('/noise_texture.png')",
               backgroundRepeat: 'repeat',
-              opacity: 0.15,
+              opacity: 0.02,
+              mixBlendMode: 'soft-light',
               pointerEvents: 'none',
               zIndex: 2,
-              border: '1px solid red', // for debugging, remove after
+              backgroundColor: 'rgba(255, 255, 255, 0.02)',
             }}
           />
         </div>

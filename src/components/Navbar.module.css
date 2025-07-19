@@ -28,13 +28,10 @@
   height: 100%;
   z-index: 1;
   pointer-events: none;
-  background: rgba(20, 20, 30, 0.45);
-  backdrop-filter: blur(20px) saturate(1.5);
-  -webkit-backdrop-filter: blur(20px) saturate(1.5);
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
-  will-change: backdrop-filter;
-  transform: translateZ(0);
+  background: rgba(20, 20, 30, 0.15); /* Much more transparent */
+  backdrop-filter: blur(8px) saturate(1.2); /* Reduced blur and saturation */
+  -webkit-backdrop-filter: blur(8px) saturate(1.2);
+  /* Removed mask-image to ensure full visibility */
 }
 
 .glassBg::after {
@@ -45,6 +42,16 @@
   opacity: 0.04; /* tweak for visibility */
   pointer-events: none;
   z-index: 2;
+}
+
+.noiseOverlay {
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat;
+  opacity: 0.02; /* Almost invisible noise */
+  pointer-events: none;
+  z-index: 2;
+  mix-blend-mode: soft-light; /* Changed blend mode for subtler effect */
 }
 
 
