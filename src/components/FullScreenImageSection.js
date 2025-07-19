@@ -6,7 +6,7 @@ const LOGO_START = { scale: 1, width: 350, height: 350, opacity: 1 };
 const LOGO_END = { scale: 0.5, width: 150, height: 150, opacity: 0.98 };
 const SCROLL_DISTANCE = 220; // px to complete the transition
 const NAVBAR_LEFT = 32; // px, matches navbar left padding
-const NAVBAR_TOP = -20; // px, fixed offset for logo vertical alignment in navbar
+const NAVBAR_TOP = -28; // px, fixed offset for logo vertical alignment in navbar
 
 function lerp(a, b, t) {
   return a + (b - a) * t;
@@ -52,11 +52,11 @@ const FullScreenImageSection = ({ scrolled, onScrollCheck }) => {
         muted
         playsInline
       >
-        <source src={`${process.env.PUBLIC_URL}/void/void_background_video.mp4`} type="video/mp4" />
+        <source src={`${process.env.PUBLIC_URL}/void_background_video.mp4`} type="video/mp4" />
       </video>
       <img
         ref={logoRef}
-        src={`${process.env.PUBLIC_URL}/void/void-logo.png`}
+        src={`${process.env.PUBLIC_URL}/void-logo.png`}
         alt="VOID Logo"
         style={{
           position: 'fixed',

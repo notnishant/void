@@ -6,7 +6,7 @@ const AsymmetricalImageSection = () => {
   return (
     <section className={styles.asymmetricalSection}>
       <div className={styles.imageGrid}>
-        <div className={styles.largeImage} style={{ backgroundImage: "url('/PIC1_1024x.jpg.jpeg')" }}>
+        <div className={styles.largeImage} style={{ backgroundImage: `url('${process.env.PUBLIC_URL}/PIC1_1024x.jpg.jpeg')` }}>
           <div className={styles.textOverlay}>
             <div className={styles.textContent}>
               <h2 className={styles.collectionTitle}>SIGNATURE COLLECTION</h2>
@@ -17,7 +17,7 @@ const AsymmetricalImageSection = () => {
             </div>
           </div>
         </div>
-        <div className={styles.smallImage} style={{ backgroundImage: "url('/PIC3_700x.jpg.jpeg')" }}></div>
+        <div className={styles.smallImage} style={{ backgroundImage: `url('${process.env.PUBLIC_URL}/PIC3_700x.jpg.jpeg')` }}></div>
       </div>
     </section>
   );

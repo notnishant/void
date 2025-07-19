@@ -61,7 +61,7 @@ const Footer = () => {
 
         {/* Logo */}
         <div className={styles.logoContainer}>
-          <img src="/void-logo.png" alt="VOID" className={styles.logo} />
+          <img src={`${process.env.PUBLIC_URL}/void-logo.png`} alt="VOID" className={styles.logo} />
         </div>
       </div>
 

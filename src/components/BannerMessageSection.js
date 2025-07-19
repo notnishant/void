@@ -9,8 +9,8 @@ const BannerMessageSection = () => (
       </h1>
     </div>
     <div className={styles.imageGrid}>
-      <div className={styles.smallImage} style={{ backgroundImage: "url('/WHITELICENSEFRONT_700x.png')" }}></div>
-      <div className={styles.largeImage} style={{ backgroundImage: "url('/HH_1024x.jpg.jpeg')" }}></div>
+      <div className={styles.smallImage} style={{ backgroundImage: `url('${process.env.PUBLIC_URL}/WHITELICENSEFRONT_700x.png')` }}></div>
+      <div className={styles.largeImage} style={{ backgroundImage: `url('${process.env.PUBLIC_URL}/HH_1024x.jpg.jpeg')` }}></div>
     </div>
   </section>
 );
