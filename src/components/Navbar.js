@@ -1,17 +1,24 @@
 import React from 'react';
 import styles from './Navbar.module.css';
 import AccountCartSection from './AccountCartSection';
-import { NAV_LINKS } from '../constants';
 
 const Navbar = ({ glass }) => {
   return (
     <nav className={glass ? `${styles.navbar} ${styles.glass}` : styles.navbar}>
       {glass && (
         <div className={styles.glassBg}>
-          <div 
+          <div
             className={styles.noiseOverlay}
             style={{
-              backgroundImage: "url('/noise_texture.png')"
+              position: 'absolute',
+              inset: 0,
+              backgroundImage: `url(${process.env.PUBLIC_URL}/void/noise_texture.png)`,
+              backgroundRepeat: 'repeat',
+              opacity: 0.02,
+              mixBlendMode: 'soft-light',
+              pointerEvents: 'none',
+              zIndex: 2,
+              backgroundColor: 'rgba(255, 255, 255, 0.02)',
             }}
           />
         </div>
@@ -20,11 +27,9 @@ const Navbar = ({ glass }) => {
         <div className={styles.left}></div>
         <div className={styles.center}>
           <ul className={styles.navLinks}>
-            {NAV_LINKS.map((link) => (
-              <li key={link.href}>
-                <a href={link.href}>{link.label}</a>
-              </li>
-            ))}
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#collections">Collections</a></li>
+            <li><a href="#about">About</a></li>
           </ul>
         </div>
         <div className={styles.right}>
